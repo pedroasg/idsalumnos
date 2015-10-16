@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= facebook
+//= require header
 //= require bootstrap-sprockets
 //= require_tree .
