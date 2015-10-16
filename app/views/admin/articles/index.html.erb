@@ -1,7 +1,8 @@
+<h3>Noticas</h3>
 <div class="articles">
   <% @articles.each do |article| %>
     <div class="article">
-      <h1><%= article.title %></h1>
+      <h3><%= article.title %></h3>
       <div class="under-title">
         Redactado por: <%= article.author %>
         el <%= article.created_at.strftime('%v') %>
@@ -11,9 +12,13 @@
           <%= image_tag article.image %>
         </div>
         <div class="texto">
-          <p><%= article.body %></p>
+          <p><%= raw (article.body.truncate(840)) %></p>
         </div>
+      </div>
+      <div class="more">
+        <%= link_to "Leer más...", article_path(article) %>
       </div>
     </div>
   <% end %>
 </div>
+

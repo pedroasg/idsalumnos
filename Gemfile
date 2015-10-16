@@ -15,6 +15,7 @@ gem 'responders'
 gem 'aws-sdk', '~> 2.1.7'
 gem 'fog', '~> 1.32.0'
 gem 'carrierwave'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'byebug'

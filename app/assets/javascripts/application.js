@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= facebook
+//= require facebook
+//= require ckeditor/init
 //= require header
 //= require bootstrap-sprockets
 //= require_tree .

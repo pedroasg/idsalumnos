@@ -2,10 +2,12 @@
 @import 'header';
 @import 'home';
 @import 'articles';
+@import 'article';
 
 //bootstrap
 @import 'framework_and_overrides';
 
 
 //fonts
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700); //general
+@import url(https://fonts.googleapis.com/css?family=Cuprum:400,700); //titles

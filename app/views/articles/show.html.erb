@@ -1,0 +1,15 @@
+<div class="article">
+  <h3><%= @article.title %></h3>
+  <div class="under-title">
+    Redactado por: <%= @article.author %>
+    el <%= @article.created_at.strftime('%v') %>
+  </div>
+  <div class="contenido">
+    <div class="image">
+      <%= image_tag @article.image %>
+    </div>
+    <div class="texto">
+      <p><%= raw(@article.body) %></p>
+    </div>
+  </div>
+</div>

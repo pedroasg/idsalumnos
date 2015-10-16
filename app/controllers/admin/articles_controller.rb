@@ -1,5 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   respond_to :html
+  before_action :is_admin
 
   def index
     @articles = Article.all
@@ -31,7 +32,7 @@ class Admin::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update(permited_params)
       flash[:notice] = "Noticia actualizada"
-      redirect_to admin_article_path(@article)
+      redirect_to admin_articles_path
     else
       respond_with @article
     end

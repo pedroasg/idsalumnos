@@ -41,6 +41,11 @@ section {
   @extend .row;
   margin-top: 0;
   }
+@media (max-width: 775px) {
+  main {
+    padding: 0;
+  }
+}
 
 // Styles for form views
 // using Bootstrap
