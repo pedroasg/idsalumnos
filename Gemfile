@@ -12,8 +12,9 @@ gem 'simple_form'
 gem 'omniauth-facebook'
 gem 'bcrypt'
 gem 'responders'
-gem 'fog', require: 'fog/aws'
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'aws-sdk', '~> 2.1.7'
+gem 'fog', '~> 1.32.0'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'

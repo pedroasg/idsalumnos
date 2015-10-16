@@ -1,0 +1,21 @@
+<% @articles.each do |article| %>
+  <div class="articles">
+    <% @articles.each do |article| %>
+      <div class="article">
+        <h1><%= article.title %></h1>
+        <div class="under-title">
+          Redactado por: <%= article.author %>
+          el <%= article.created_at.strftime('%v') %>
+        </div>
+        <div class="contenido">
+          <div class="image">
+            <%= image_tag article.image %>
+          </div>
+          <div class="texto">
+            <p><%= article.body %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
