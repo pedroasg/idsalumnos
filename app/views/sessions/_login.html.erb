@@ -1,0 +1,6 @@
+<% if current_user %>
+  Welcome <%= @user.first_name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<% end %>
