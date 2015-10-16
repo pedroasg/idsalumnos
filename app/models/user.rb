@@ -1,13 +1,4 @@
 class User < ActiveRecord::Base
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
-  validates :first_name, :last_name, presence: true
-  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
-    uniqueness: true, unless: :logged_with_facebook?
-  before_save :format_email, unless: :logged_with_facebook?
-  validates :facebook_id, uniqueness: true, allow_nil: true
-  validates :password, length: { minimum: 6 }
-  validates :password, presence: true, allow_blank: true, on: :update
   has_secure_password
 
   def logged_with_facebook?
@@ -32,9 +23,5 @@ class User < ActiveRecord::Base
   private
   def create_pass
     @temp_pass = (0...8).map { (65 + rand(26)).chr }.join
-  end
-
-  def format_email
-    self.email = email.downcase
   end
 end

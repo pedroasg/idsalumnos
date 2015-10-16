@@ -11,6 +11,10 @@ gem 'pg'
 gem 'simple_form'
 gem 'omniauth-facebook'
 gem 'bcrypt'
+gem 'responders'
+gem 'fog', require: 'fog/aws'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
 group :development, :test do
   gem 'byebug'
 end

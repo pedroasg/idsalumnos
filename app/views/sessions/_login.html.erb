@@ -1,6 +1,12 @@
-<% if current_user %>
-  Welcome <%= @user.first_name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-<% end %>
+<div class="facebook-login">
+  <% if current_user %>
+    Bienvenido <%= current_user.first_name %>!
+    <div class="facebook btn">
+      <%= link_to "Cerrar Sesión", signout_path %>
+    </div>
+  <% else %>
+    <div class="facebook btn">
+      <%= link_to "Iniciar Sesión con Facebook", "/auth/facebook" %>
+    </div>
+  <% end %>
+</div>
