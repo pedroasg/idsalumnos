@@ -10,6 +10,7 @@ gem 'bootstrap-sass'
 gem 'pg'
 gem 'simple_form'
 gem 'omniauth-facebook'
+gem 'bcrypt'
 group :development, :test do
   gem 'byebug'
 end
