@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'layout#index'
-    get "layout/search" => 'layout#search', as: "layout_search"
     resources :articles, except: :show
     resources :courses, except: :show
   end

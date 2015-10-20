@@ -1,6 +1,9 @@
 .home-wrap {
   display: flex;
   min-height: 100vh;
+  .center{
+    text-align: center;
+  }
 
   .facebook-login{
     text-align: right;

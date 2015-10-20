@@ -1,5 +1,5 @@
 class Admin::LayoutController < ApplicationController
-  before_action :is_admin
+  before_action :is_admin, except: :search
 
   def index
     params[:search] = "" if params[:search].nil?
@@ -18,21 +18,5 @@ class Admin::LayoutController < ApplicationController
                                              :per_page => 10)
     end
     @users
-  end
-
-  def search
-    unless params[:search].empty?
-    @users = User.where("first_name like ? or last_name like ?",
-        '%'+ params[:search] + '%',
-        '%' + params[:search] + '%').limit(5)
-    end
-    respond_to do |format|
-      format.js {render layout: true}
-    end
-  end
-
-  private
-  def provider_params
-    params.require(:user).permit(:first_name, :last_name, :admin)
   end
 end

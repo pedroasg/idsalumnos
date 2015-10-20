@@ -3,7 +3,7 @@ class Admin::ArticlesController < ApplicationController
   before_action :is_admin
 
   def index
-    @articles = Article.all.paginate(:page => params[:page], :per_page => 10)
+    @articles = Article.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

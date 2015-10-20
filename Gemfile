@@ -8,7 +8,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'pg'
-gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'omniauth-facebook'
 gem 'bcrypt'
@@ -18,6 +17,7 @@ gem 'fog', '~> 1.32.0'
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'

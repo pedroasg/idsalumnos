@@ -1,0 +1,9 @@
+<div class="news-header">
+  <h3>Cursos</h3>
+  <%= link_to "Nuevo Curso", new_admin_course_path, class: "btn btn-primary" %>
+</div>
+<% @courses.each do |course| %>
+  <%= image_tag course.image %>
+  <%= course.name %>
+  <%= course.description %>
+<% end %>

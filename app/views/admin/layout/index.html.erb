@@ -9,6 +9,8 @@
 <div class="search">
   <%= render 'search' %>
 </div>
-<%= render 'matches' %>
-<%= render 'usersindex' %>
 
+<%= render 'usersindex' %>
+<div class="center">
+  <%= will_paginate @users,  renderer: BootstrapPagination::Rails %>
+</div>
