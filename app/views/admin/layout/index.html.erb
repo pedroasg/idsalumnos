@@ -1,0 +1,14 @@
+<div class="admin-index">
+<h3> Panel de Administración </h3>
+  <div class="position">
+    <%= link_to "Noticias", admin_articles_path %>
+    <%= link_to "Cursos", admin_courses_path %>
+    <%= link_to "Torneos", "#" %>
+    <%= link_to "Tutoriales", "#" %>
+  </div>
+<div class="search">
+  <%= render 'search' %>
+</div>
+<%= render 'matches' %>
+<%= render 'usersindex' %>
+

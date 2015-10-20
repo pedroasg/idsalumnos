@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @course] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :descripton, as: :text %>
+  <%= f.input :image %>
+  <%= f.submit %>
+<% end %>

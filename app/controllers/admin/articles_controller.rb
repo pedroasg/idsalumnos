@@ -3,7 +3,7 @@ class Admin::ArticlesController < ApplicationController
   before_action :is_admin
 
   def index
-    @articles = Article.all
+    @articles = Article.all.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

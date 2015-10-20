@@ -13,15 +13,21 @@
     padding: 15px;
     .texto {
       width: 75%;
-      padding: 0 10px;
+      padding: 20px;
+      background-color: $article-color;
+      border-radius: 5px;
+      border: 1px solid #cccccc;
+
     }
     .image {
       width: 25%;
       height: auto;
+      padding: 3px;
     }
   }
 
   h3 {
+    margin-top: 10px;
     margin-bottom: 10px;
     padding: 0 10px;
     font-family: $title-font;

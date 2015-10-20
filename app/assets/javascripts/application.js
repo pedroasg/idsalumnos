@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require facebook
 //= require ckeditor/init
+//= require config
+//= require search
 //= require header
 //= require bootstrap-sprockets
 //= require_tree .

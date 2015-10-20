@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def profile_picture
-    "https://graph.facebook.com/#{self.facebook_id}/picture?width=512&height=512"
+    "https://graph.facebook.com/#{self.facebook_id}/picture?width=100&height=100"
   end
 
   private

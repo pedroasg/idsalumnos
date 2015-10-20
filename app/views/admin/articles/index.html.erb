@@ -1,4 +1,7 @@
-<h3>Noticas</h3>
+<div class="news-header">
+  <h3>Noticas</h3>
+  <%= link_to "Nueva noticia", new_admin_article_path, class: "btn btn-primary" %>
+</div>
 <div class="articles">
   <% @articles.each do |article| %>
     <div class="article">
@@ -12,13 +15,19 @@
           <%= image_tag article.image %>
         </div>
         <div class="texto">
-          <p><%= raw (article.body.truncate(840)) %></p>
+          <%= raw (article.body.truncate(840)) %>
         </div>
       </div>
       <div class="more">
-        <%= link_to "Leer más...", article_path(article) %>
+      <%= link_to [:admin, article], method: :delete, data: { confirm: 'Borrar?' } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        Borrar
+      <% end %>
+        <%= link_to "Editar", edit_admin_article_path(article),
+          class: "glyphicon glyphicon-edit" %>
       </div>
     </div>
   <% end %>
+  <%= will_paginate @articles %>
 </div>
 

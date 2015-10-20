@@ -12,7 +12,7 @@
           <%= image_tag article.image %>
         </div>
         <div class="texto">
-          <p><%= raw (article.body.truncate(840)) %></p>
+          <%= raw (article.body.truncate(840)) %>
         </div>
       </div>
       <div class="more">
@@ -20,4 +20,5 @@
       </div>
     </div>
   <% end %>
+  <%= will_paginate @articles %>
 </div>
