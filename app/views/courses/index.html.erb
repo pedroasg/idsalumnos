@@ -11,12 +11,7 @@
       <h3><%= course.name %></h3>
       <p><%= course.description %></p>
       <div class="more">
-      <%= link_to [:admin, course], method: :delete, data: { confirm: 'Borrar?' } do %>
-        <span class="glyphicon glyphicon-trash"></span>
-        Borrar
-      <% end %>
-        <%= link_to "Editar", edit_admin_course_path(course),
-          class: "glyphicon glyphicon-edit" %>
+        <%= link_to "Ver más...", course_path(course) %>
       </div>
     </div>
   <% end %>

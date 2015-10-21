@@ -1,0 +1,48 @@
+.courses {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  .course {
+    width: 25%;
+    margin-top: 10px;
+    text-align: center;
+    margin-right: 10px;
+    border: $default-border;
+    box-shadow: $shadow;
+    display: inline-block;
+    .image {
+      width: auto;
+      height: 200px;
+      padding: 5px 5px 1px 5px;
+      img {
+        height: 190px;
+        width: auto;
+      }
+    }
+    h3 {
+      margin: 0;
+      padding: 5px;
+      color: $primary-color;
+      background: $dark-color;
+    }
+    p {
+      padding: 5px;
+    }
+    .more {
+      text-align: right;
+      margin-right: 10px;
+      a, a:active, a:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  @media (max-width: 775px) {
+    display: block;
+    .course {
+      width:100%;
+      display: block;
+    }
+  }
+}

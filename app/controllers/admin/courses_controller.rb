@@ -32,7 +32,7 @@ class Admin::CoursesController < ApplicationController
     @course = Course.find(params[:id])
     if @course.update(permited_params)
       flash[:notice] = "Noticia actualizada"
-      redirect_to courses
+      redirect_to admin_courses_path
     else
       respond_with @course
     end
@@ -46,6 +46,6 @@ class Admin::CoursesController < ApplicationController
 
   private
   def permited_params
-    params.require(:course).permit(:title, :description, :image)
+    params.require(:course).permit(:name, :description, :image)
   end
 end
