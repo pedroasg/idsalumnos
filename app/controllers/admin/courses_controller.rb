@@ -12,12 +12,13 @@ class Admin::CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    course_status
   end
 
   def create
     @course = Course.new(permited_params)
     if @course.save
-      flash[:notice] = "Noticia creada."
+      flash[:notice] = "Curso creado."
       redirect_to admin_courses_path
     else
       respond_with @course
@@ -26,12 +27,13 @@ class Admin::CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    course_status
   end
 
   def update
     @course = Course.find(params[:id])
     if @course.update(permited_params)
-      flash[:notice] = "Noticia actualizada"
+      flash[:notice] = "Curso actualizado."
       redirect_to admin_courses_path
     else
       respond_with @course
@@ -46,6 +48,11 @@ class Admin::CoursesController < ApplicationController
 
   private
   def permited_params
-    params.require(:course).permit(:name, :description, :image)
+    params.require(:course).permit(:name, :description, :image, :start_date,
+      :finish_date, :status)
+  end
+  def course_status
+    @course_status = [ "Inscripciones abiertas", "Inscripciones cerradas",
+      "Finalizado" ]
   end
 end

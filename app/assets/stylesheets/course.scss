@@ -16,6 +16,10 @@
       width: auto;
     }
   }
+  .course-content {
+    text-align: left;
+    flex-direction: column;
+  }
   h3 {
     margin: 0;
     padding: 5px;

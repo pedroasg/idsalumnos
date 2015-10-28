@@ -1,6 +1,10 @@
 <%= simple_form_for [:admin, @course] do |f| %>
   <%= f.input :name, label: "Nombre" %>
   <%= f.input :description, label: "Descripción", as: :text %>
+  <%= f.input :start_date, label: "Inicio" %>
+  <%= f.input :finish_date, label: "Fin" %>
+  <%= f.input :status, label: "Estado", collection: @course_status,
+          as: :select, group_method: :status %>
   <%= f.input :image, label: "Imágen" %>
   <%= f.submit %>
 <% end %>

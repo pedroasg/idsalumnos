@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require facebook
 //= require ckeditor/init
+//= require courses
 //= require config
 //= require search
 //= require header

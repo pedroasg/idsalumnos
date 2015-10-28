@@ -3,5 +3,10 @@
   <div class="image">
     <%= image_tag @course.image %>
   </div>
-  <p><%= @course.description %></p>
+  <div class="course-content">
+    <p><%= @course.description %></p>
+    <p> <b>Inicia</b>: <%= @course.start_date.strftime('%v') %></p>
+    <p><b>Termina</b> <%= @course.finish_date.strftime('%v') %></p>
+    <p id="status"><%= @course.status %></p>
+  </div>
 </div>
