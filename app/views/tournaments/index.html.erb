@@ -1,8 +1,10 @@
 <div class="tournament-header">
   <h3>Torneos</h3>
   <h3 class="twitch"> <%= link_to "Ver Twitch", watch_twitch_path %> </h3>
+  <h3><%= link_to "Reglas", ".bs-example-modal-lg", "data-toggle" => "modal" %></h3>
 </div>
 
+<%= render 'rules' %>
 <div class="tournaments">
   <% @tournaments.each do |tournament| %>
     <div class="tournament">
