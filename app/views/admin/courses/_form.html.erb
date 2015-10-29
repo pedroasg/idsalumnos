@@ -4,7 +4,7 @@
   <%= f.input :start_date, label: "Inicio" %>
   <%= f.input :finish_date, label: "Fin" %>
   <%= f.input :status, label: "Estado", collection: @course_status,
-          as: :select, group_method: :status %>
+          as: :select, group_method: :status, default: "Pendiente" %>
   <%= f.input :image, label: "Imágen" %>
   <%= f.submit %>
 <% end %>

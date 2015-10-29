@@ -1,0 +1,15 @@
+<div class="tournament-header">
+  <h3>Torneos</h3>
+  <h3 class="twitch"> <%= link_to "Ver Twitch", watch_twitch_path %> </h3>
+</div>
+
+<div class="tournaments">
+  <% @tournaments.each do |tournament| %>
+    <div class="tournament">
+      <%= image_tag tournament.image %>
+      <h3><%= tournament.name %></h3>
+      <p> <b>Equipo ganador:</b> <%= tournament.winner %></p>
+      <p> <%= tournament.status %> </p>
+    </div>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151026222858) do
+ActiveRecord::Schema.define(version: 20151028225115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,21 +43,29 @@ ActiveRecord::Schema.define(version: 20151026222858) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "position"
+    t.integer  "team_id"
   end
+
+  add_index "players", ["team_id"], name: "index_players_on_team_id", using: :btree
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "leader"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "tournament_id"
   end
+
+  add_index "teams", ["tournament_id"], name: "index_teams_on_tournament_id", using: :btree
 
   create_table "tournaments", force: :cascade do |t|
     t.string   "name"
     t.string   "winner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "image"
+    t.string   "status"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,4 +79,6 @@ ActiveRecord::Schema.define(version: 20151026222858) do
     t.string   "facebook_id"
   end
 
+  add_foreign_key "players", "teams"
+  add_foreign_key "teams", "tournaments"
 end

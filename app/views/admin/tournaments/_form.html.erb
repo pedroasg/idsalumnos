@@ -1,0 +1,11 @@
+<%= simple_form_for [:admin, @tournament] do |f| %>
+  <%= f.input :name, label: "Nombre" %>
+  <% if params[:action] == "edit" %>
+    <%= f.input :winner, :collection => @teams,:label_method => :name,:value_method => :id,:label => "Ganador" ,:include_blank => true %>
+  <% end %>
+  <%= f.input :status,  collection: @tournament_status,
+        as: :select, group_method: :status %>
+  <%= f.input :image, label: "Imagen",
+                      hint: "Agrega una imagen relacionada a la noticia" %>
+  <%= f.submit %>
+<% end %>

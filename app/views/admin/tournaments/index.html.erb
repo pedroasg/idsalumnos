@@ -1,0 +1,24 @@
+<div class="tournament-header">
+  <h3>Torneos</h3>
+  <%= link_to "Crear torneo", new_admin_tournament_path,
+    class: "btn btn-primary" %>
+</div>
+
+<div class="tournaments">
+  <% @tournaments.each do |tournament| %>
+    <div class="tournament">
+      <%= image_tag tournament.image %>
+      <h3><%= tournament.name %></h3>
+      <p> <b>Equipo ganador:</b> <%= tournament.winner %></p>
+      <p> <%= tournament.status %> </p>
+      <div class="more">
+        <%= link_to "Editar", edit_admin_tournament_path(tournament),
+          class: "glyphicon glyphicon-edit" %>
+        <%= link_to [:admin, tournament], method: :delete, data: { confirm: 'Borrar?' } do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          Borrar
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

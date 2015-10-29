@@ -1,0 +1,66 @@
+.tournament-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  h3{
+    margin: 10px 0 0 0;
+  }
+  .btn {
+    padding: 9px 10px 10px 10px;
+  }
+}
+.tournaments {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+
+  .tournament {
+    padding: 0 0 10px 0;
+    width: 250px;
+    border: $default-border;
+    border-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    img {
+      height: auto;
+      width: 250px;
+    }
+    h3 {
+      margin: 0;
+      background-color: $dark-color;
+      color: $primary-color;
+      padding: 5px;
+    }
+    p {
+      padding: 5px;
+    }
+    .more {
+      text-align: right;
+      margin-right: 10px;
+      a, a:active, a:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  @media (max-width: 775px) {
+      width: 100%;
+      display: block;
+      .tournament {
+        width:100%;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+}
