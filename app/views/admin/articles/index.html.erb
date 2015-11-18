@@ -31,12 +31,12 @@
         </div>
       </div>
     <% end %>
-  <% end %>
-  <div class="center">
     <div class="center">
-      <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
+      <div class="center">
+        <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
 </div>
 
