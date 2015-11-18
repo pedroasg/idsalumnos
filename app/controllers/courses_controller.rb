@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @courses = Course.where(status: "Inscripciones abiertas")
+    @courses = Course.all
   end
 
   def show
