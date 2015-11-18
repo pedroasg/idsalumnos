@@ -2,8 +2,15 @@
   display: flex;
   flex-direction: row;
   width: 90%;
+  align-content: flex-start;
   margin-left: auto;
   margin-right: auto;
+  .twitch-video {
+    width: 70%;
+  }
+  .twitch-chat {
+    width: 30%;
+  }
 }
 
 .twitch {
