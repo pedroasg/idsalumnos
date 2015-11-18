@@ -1,7 +1,9 @@
 <div class="news-header">
   <h3>Noticas</h3>
-  <%= link_to "Nueva noticia", new_admin_article_path, class: "btn btn-primary" %>
+  <%= link_to "Nueva noticia", new_admin_article_path,
+      class: "btn btn-primary" %>
 </div>
+
 <div class="articles">
   <% @articles.each do |article| %>
     <div class="article">
@@ -30,8 +32,8 @@
   <% end %>
   <div class="center">
     <div class="center">
-    <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
-  </div>
+      <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
+    </div>
   </div>
 
 </div>
