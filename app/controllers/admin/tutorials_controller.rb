@@ -1,4 +1,4 @@
-class Admin::ArticlesController < ApplicationController
+class Admin::TutorialsController < ApplicationController
   respond_to :html
   before_action :is_admin
 

@@ -5,38 +5,36 @@
 </div>
 
 <div class="articles">
-  <% if @articles %>
-    <% @articles.each do |article| %>
-      <div class="article">
-        <h3><%= article.title %></h3>
-        <div class="under-title">
-          Redactado por: <%= article.author %>
-          el <%= article.created_at.strftime('%v') %>
+  <% @articles.each do |article| %>
+    <div class="article">
+      <h3><%= article.title %></h3>
+      <div class="under-title">
+        Redactado por: <%= article.author %>
+        el <%= article.created_at.strftime('%v') %>
+      </div>
+      <div class="contenido">
+        <div class="image">
+          <%= image_tag article.image %>
         </div>
-        <div class="contenido">
-          <div class="image">
-            <%= image_tag article.image %>
-          </div>
-          <div class="texto">
-            <%= raw (article.body.truncate(840)) %>
-          </div>
-        </div>
-        <div class="more">
-        <%= link_to [:admin, article], method: :delete, data: { confirm: 'Borrar?' } do %>
-          <span class="glyphicon glyphicon-trash"></span>
-          Borrar
-        <% end %>
-          <%= link_to "Editar", edit_admin_article_path(article),
-            class: "glyphicon glyphicon-edit" %>
+        <div class="texto">
+          <%= raw (article.body.truncate(840)) %>
         </div>
       </div>
-    <% end %>
-    <div class="center">
-      <div class="center">
-        <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
+      <div class="more">
+      <%= link_to [:admin, article], method: :delete, data: { confirm: 'Borrar?' } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        Borrar
+      <% end %>
+        <%= link_to "Editar", edit_admin_article_path(article),
+          class: "glyphicon glyphicon-edit" %>
       </div>
     </div>
   <% end %>
+  <div class="center">
+    <div class="center">
+      <%= will_paginate @articles, :previous_label => 'Anterior', :next_label => 'Siguiente',  renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
 
 </div>
 
