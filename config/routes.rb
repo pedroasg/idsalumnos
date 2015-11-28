@@ -5,12 +5,15 @@ Rails.application.routes.draw do
     resources :articles, except: :show
     resources :courses, except: :show
     resources :tournaments
+    resources :tutorials
   end
 
   resources :articles, only: [:index, :show]
   resources :courses, only: [:index, :show]
   resources :tournaments, only: :index
-  resources :tutorials, only: :index
+  resources :tutorials do
+    member { post :vote }
+  end
 
   root to: 'articles#index'
   get '/watch-twitch' => 'tournaments#watch'

@@ -1,0 +1,24 @@
+<div class="tutorials-header">
+  <h3>Tutoriales</h3>
+  <%= link_to "Nuevo recurso", new_admin_tutorial_path,
+    class: "btn btn-primary" %>
+</div>
+<div class="tutorials">
+  <% @tutorials.each do |tutorial| %>
+    <div class="tutorial">
+      <h4><%= tutorial.name %></h4>
+      <p><%= raw(tutorial.description) %></p>
+      <div class="language">
+        <b> Idoma: </b><%= tutorial.language %>
+      </div>
+      <div class="more">
+      <%= link_to [:admin, tutorial], method: :delete, data: { confirm: 'Borrar?' } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        Borrar
+      <% end %>
+        <%= link_to "Editar", edit_admin_tutorial_path(tutorial),
+          class: "glyphicon glyphicon-edit" %>
+      </div>
+    </div>
+  <% end %>
+</div>

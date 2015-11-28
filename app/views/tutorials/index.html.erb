@@ -1,7 +1,22 @@
 <% content_for :title, "IDS Comite de Alumnos | Tutoriales" %>
-<div class="tournament-header">
+<div class="tutorials-header">
   <h3>Tutoriales</h3>
 </div>
-<div class="inscripciones">
-  <h3>En construcción</h3>
+<div class="tutorials">
+  <% @tutorials.each do |tutorial| %>
+    <div class="tutorial">
+      <h4><%= tutorial.name %></h4>
+      <p><%= raw(tutorial.description) %></p>
+      <div class="language">
+        <b> Idoma: </b><%= tutorial.language %>
+      </div>
+      <div class="more">
+      | <%= pluralize tutorial.reputation_for(:votes).to_i, "vote" %>
+        <% if current_user && !current_user.voted_for?(tutorial) %>
+          | <%= link_to "up", vote_tutorial_path(tutorial, type: "up"), method: "post" %>
+          | <%= link_to "down", vote_tutorial_path(tutorial, type: "down"), method: "post" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
