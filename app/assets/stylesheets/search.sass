@@ -1,0 +1,33 @@
+.search
+  margin-top: 20px
+  width: 50%
+  .input-group
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+  @media (max-width: 775px)
+    width: 100%
+.search-options
+  float: right
+  margin-right: 7%
+  width: 42%
+  background-color: white
+  display: block
+  height: 0
+  position: relative
+  z-index: 2
+  :hover
+    background-color: #ecf0f1
+    text-decoration: none
+  li
+    list-style-type: none
+    padding: .5% 1%
+    margin: 0 .5%
+    border-left: 1px solid #bdc3c7
+    border-right: 1px solid #bdc3c7
+    border-bottom: 1px solid #bdc3c7
+    background-color: white
+    span
+      color: #bdc3c7
+    :hover
+      background-color: #ecf0f1

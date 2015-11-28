@@ -1,0 +1,25 @@
+.admin-index
+  width: 100%
+  .position
+    padding: 0
+    display: flex
+    width: 100%
+    flex-direction: row
+    justify-content: space-between
+    text-decoration: none
+    list-style: none
+    text-align: center
+    margin-top: 20px
+    a, a:hover
+      width: 24%
+      background: $dark-color
+      text-decoration: none
+      color: $primary-color
+      height: 30px
+      padding-top: 5px
+      &:hover
+        box-shadow: $shadow
+        background: $light-color
+        color: $secondary-color
+  @media (max-width: 775px)
+    display: block

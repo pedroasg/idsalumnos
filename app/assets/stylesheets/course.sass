@@ -1,0 +1,29 @@
+.course
+  width: 80%
+  margin-top: 10px
+  text-align: center
+  margin-right: 10px
+  border: $default-border
+  box-shadow: $shadow
+  display: flex
+  flex-direction: row
+  .image
+    width: auto
+    height: 200px
+    padding: 5px 5px 1px 5px
+    img
+      height: 190px
+      width: auto
+  .course-content
+    text-align: left
+    flex-direction: column
+  h3
+    margin: 0
+    padding: 5px
+    color: $primary-color
+    background: $dark-color
+  p
+    padding: 5px
+  @media (max-width: 775px)
+    width: 100%
+    flex-direction: column
