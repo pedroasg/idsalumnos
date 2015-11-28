@@ -8,17 +8,17 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <% if is_congress? %>
+    <body class="<%= params[:controller] %>">
+  <% else %>
+    <body>
+  <% end %>
     <div class="home-wrap">
-      <header>
-        <%= render 'layouts/navigation' %>
-      </header>
-      <main role="contents">
-        <%= render 'layouts/messages' %>
-        <%= render 'sessions/login' %>
-        <%= yield %>
-        <%= render 'layouts/googlead' %>
-      </main>
+      <% if !is_congress? %>
+        <%= render 'layouts/main' %>
+      <% else %>
+        <%= render 'congreso/layout/main' %>
+      <% end %>
     </div>
   </body>
 </html>

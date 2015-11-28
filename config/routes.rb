@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     resources :tutorials
   end
 
+  namespace :congreso do
+    root to: 'layout#home'
+    resources :registros, only: [:new, :create]
+  end
+
   resources :articles, only: [:index, :show]
   resources :courses, only: [:index, :show]
   resources :tournaments, only: :index

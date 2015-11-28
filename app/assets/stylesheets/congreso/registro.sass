@@ -1,0 +1,54 @@
+#congreso
+  .registro
+    margin: 20px auto 0 auto
+    width: 100%
+    form
+      background-color: rgba(0, 0, 0, 0.3)
+      width: 85%
+      padding: 40px
+      margin: 30px auto 30px auto
+      border: 1px solid #fff
+      border-radius: 20px
+      label
+        color: #ecf0f1
+      p
+        color: #bdc3c7
+      .full-name
+        display: flex
+        flex-direction: row-resize
+        justify-content: space-between
+        .registro_nombres
+          width: 50%
+          margin-right: 5px
+        .registro_apellidos
+          width: 50%
+          margin-left: 5px
+      .submit-btn
+        display: inline-block
+        width: 200px
+        padding: 8px
+        color: #fff
+        background-color: transparent
+        border: 1px solid #fff
+        text-align: center
+        outline: none
+        text-decoration: none
+        transition: background-color 0.2s ease-out, border-color 0.2s ease-out
+      .submit-btn:hover,
+      .submit-btn:active
+        background-color: black
+        background-color: rgba(255, 255, 255, 0.4)
+        border-color: black
+        border-color: rgba(255, 255, 255, 0.4)
+        transition: background-color 0.3s ease-in, border-color 0.3s ease-in
+    @media (max-width: 775px)
+      width: 99%
+      form
+        width: 100%
+        margin: 10px auto 10px auto
+      .submit-btn
+        width: 99%
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 100px
+

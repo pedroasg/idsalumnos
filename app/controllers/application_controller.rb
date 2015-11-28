@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :is_admin
+  helper_method :is_admin, :is_congress?
   include SessionsHelper
 
   def current_admin
@@ -16,4 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def is_congress?
+    params[:controller].split("/").first == "congreso"
+  end
 end

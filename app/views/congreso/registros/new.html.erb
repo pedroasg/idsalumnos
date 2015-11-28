@@ -1,0 +1,20 @@
+<div class="registro">
+  <%= simple_form_for [:congreso, @registro] do |f| %>
+    <div class="full-name">
+      <%= f.input :nombres, label: "Nombre(s)", class: "nombre" %>
+      <%= f.input :apellidos, label: "Apellido(s)", class: "apellido" %>
+    </div>
+    <div class="contact">
+      <%= f.input :matricula, hint:
+        ( raw "* El formato correcto es: AL00000000 o L00000000.
+        En caso de no contar con matrícula ingresa 'NA'. <br>
+        * Es indispensable pertenecer a la UTM para tener acceso al campus.") %>
+      <%= f.input :email %>
+    </div>
+    <%= f.input :campus, collection: campus_list,
+            as: :select, group_method: :campus %>
+    <%= f.input :carrera, collection: carreras_list,
+            as: :select, group_method: :carrera %>
+    <%= f.button :submit, "Registrar", class: "submit-btn" %>
+  <% end %>
+</div>

@@ -23,19 +23,17 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development, :test do
   gem 'byebug'
-end
-group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
-group :development do
-  gem 'foreman'
-  gem 'rails_layout'
-end
-group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
 end
+
+group :development do
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+  gem 'foreman'
+  gem 'rails_layout'
+end
+
 group :production do
   gem 'puma'
   gem 'rails_12factor'

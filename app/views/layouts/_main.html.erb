@@ -1,0 +1,12 @@
+<div id="main-site">
+  <header>
+    <%= render 'layouts/navigation' %>
+  </header>
+  <main role="contents">
+    <%= render 'layouts/messages' %>
+    <%= render 'sessions/login' %>
+    <%= yield %>
+    <%= render 'layouts/googlead' %>
+  </main>
+</div>
+
