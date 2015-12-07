@@ -3,15 +3,16 @@
   <%= link_to "Nuevo recurso", new_admin_tutorial_path,
     class: "btn btn-primary" %>
 </div>
-<div class="tutorials">
+<div class="admin-tutorials">
   <% @tutorials.each do |tutorial| %>
     <div class="tutorial">
       <h4><%= tutorial.name %></h4>
       <p><%= raw(tutorial.description) %></p>
       <div class="language">
         <b> Idoma: </b><%= tutorial.language %>
+        <b> Enclace: </b><%= tutorial.url %>
       </div>
-      <div class="more">
+      <div class="settings">
       <%= link_to [:admin, tutorial], method: :delete, data: { confirm: 'Borrar?' } do %>
         <span class="glyphicon glyphicon-trash"></span>
         Borrar

@@ -32,7 +32,7 @@ class Admin::TutorialsController < ApplicationController
     @tutorial = Tutorial.find(params[:id])
     if @tutorial.update(permited_params)
       flash[:notice] = "Noticia actualizada"
-      redirect_to admin_tutorial_path
+      redirect_to admin_tutorials_path
     else
       respond_with @tutorial
     end

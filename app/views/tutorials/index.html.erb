@@ -1,20 +1,28 @@
 <% content_for :title, "IDS Comite de Alumnos | Tutoriales" %>
+
 <div class="tutorials-header">
   <h3>Tutoriales</h3>
 </div>
 <div class="tutorials">
   <% @tutorials.each do |tutorial| %>
     <div class="tutorial">
-      <h4><%= tutorial.name %></h4>
-      <p><%= raw(tutorial.description) %></p>
-      <div class="language">
-        <b> Idoma: </b><%= tutorial.language %>
+      <div class="main">
+        <h3><%= tutorial.name %></h3>
+        <p><%= raw(tutorial.description) %></p>
+        <div class="language">
+          <b> Idoma: </b><%= tutorial.language %> <br>
+           <b> Enclace: </b><%= link_to tutorial.url, tutorial.url %>
+        </div>
       </div>
       <div class="more">
-      | <%= pluralize tutorial.reputation_for(:votes).to_i, "vote" %>
+        <div class="votes">
+          <%= tutorial.reputation_for(:votes).to_i %>
+        </div>
         <% if current_user && !current_user.voted_for?(tutorial) %>
-          | <%= link_to "up", vote_tutorial_path(tutorial, type: "up"), method: "post" %>
-          | <%= link_to "down", vote_tutorial_path(tutorial, type: "down"), method: "post" %>
+          <%= link_to "", vote_tutorial_path(tutorial, type: "up"),
+          method: "post", class: "glyphicon glyphicon-thumbs-up" %>
+          <%= link_to "", vote_tutorial_path(tutorial, type: "down"),
+          method: "post", class: "glyphicon glyphicon-thumbs-down" %>
         <% end %>
       </div>
     </div>
