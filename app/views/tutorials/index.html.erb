@@ -18,6 +18,7 @@
         <div class="votes">
           <%= tutorial.reputation_for(:votes).to_i %>
         </div>
+
         <% if current_user && !current_user.voted_for?(tutorial) %>
           <%= link_to "", vote_tutorial_path(tutorial, type: "up"),
           method: "post", class: "glyphicon glyphicon-thumbs-up" %>

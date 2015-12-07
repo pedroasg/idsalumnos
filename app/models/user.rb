@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_many :rs_evaluations, class_name: "ReputationSystem::Evaluation", as: :source
 
   has_reputation :votes, source: {reputation: :votes,
     of: :self}, aggregated_by: :sum
