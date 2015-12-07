@@ -1,13 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_many :rs_evaluations, class_name: "ReputationSystem::Evaluation", as: :source
-
-  has_reputation :votes, source: {reputation: :votes,
-    of: :self}, aggregated_by: :sum
-
-  def voted_for?(tutorial)
-    evaluations.where(target_type: tutorial.class, target_id: tutorial.id).present?
-  end
 
   def logged_with_facebook?
     self.facebook_id.present?

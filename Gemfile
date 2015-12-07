@@ -19,7 +19,6 @@ gem 'ckeditor'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-gem 'activerecord-reputation-system', require: 'reputation_system'
 
 group :development, :test do
   gem 'byebug'
