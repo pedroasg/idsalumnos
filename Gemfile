@@ -19,6 +19,7 @@ gem 'ckeditor'
 gem 'rails-i18n', github: 'svenfuchs/rails-i18n'
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'

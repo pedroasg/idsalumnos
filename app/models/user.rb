@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  acts_as_voter
 
   def logged_with_facebook?
     self.facebook_id.present?

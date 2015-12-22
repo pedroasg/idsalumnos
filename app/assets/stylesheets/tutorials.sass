@@ -10,12 +10,12 @@
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .52)
     padding: 20px
     display: flex
-    flex-direction: row
+    flex-direction: row-resize
     margin-bottom: 15px
     .main
-      width: 75%
+      width: 70%
     .more
-      width: 25%
+      width: 30%
       text-align: center
       border-left: 1px solid #bdc3c7
       .votes
@@ -23,16 +23,27 @@
       .glyphicon
         font-size: 20px
         text-decoration: none
-      .glyphicon-thumbs-up
-        color: #2ecc71
-        margin-right: 5px
-        &:hover
-          color: #27ae60
-      .glyphicon-thumbs-down
-        color: #e74c3c
-        margin-left: 5px
-        &:hover
-          color: #c0392b
+      .thumbs
+        display: flex
+        flex-direction: row-resize
+        justify-content: space-around
+        .glyphicon-thumbs-up
+          color: #2ecc71
+          margin-right: 5px
+          &:hover
+            color: #27ae60
+        .glyphicon-thumbs-down
+          color: #e74c3c
+          margin-left: 5px
+          &:hover
+            color: #c0392b
     h3
       margin: 0
       padding: 0
+
+  @media (max-width: 775px)
+    width: 100%
+    .tutorial
+      border-radius: 0
+      padding: 5px
+      margin-bottom: 5px
