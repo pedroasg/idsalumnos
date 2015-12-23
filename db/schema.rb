@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151222223425) do
+ActiveRecord::Schema.define(version: 20151223022353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,28 @@ ActiveRecord::Schema.define(version: 20151222223425) do
     t.datetime "updated_at", null: false
     t.string   "image"
   end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.string   "username"
+    t.text     "text"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "comentarios", ["article_id"], name: "index_comentarios_on_article_id", using: :btree
+  add_index "comentarios", ["user_id"], name: "index_comentarios_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "username"
+    t.string   "text"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -160,6 +182,9 @@ ActiveRecord::Schema.define(version: 20151222223425) do
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
+  add_foreign_key "comentarios", "articles"
+  add_foreign_key "comentarios", "users"
+  add_foreign_key "comments", "articles"
   add_foreign_key "players", "teams"
   add_foreign_key "teams", "tournaments"
 end

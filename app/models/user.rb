@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   acts_as_voter
+  has_many :comentarios
 
   def logged_with_facebook?
     self.facebook_id.present?

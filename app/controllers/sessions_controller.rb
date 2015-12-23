@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         User.new
       user.update_facebook_info(auth)
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to :back
     end
   end
 

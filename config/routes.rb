@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :tutorials
   end
 
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comentarios
+  end
   resources :courses, only: [:index, :show]
   resources :tournaments, only: :index
   resources :tutorials, only: :index do

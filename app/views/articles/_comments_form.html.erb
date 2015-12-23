@@ -1,0 +1,10 @@
+<div class="user">
+  <%= image_tag current_user.profile_picture %>
+  <b><%= current_user.first_name + " " + current_user.last_name %></b>
+</div>
+<%= simple_form_for @comment, :url => "/articles/#{@article.id}/comentarios",
+  :method => :post do |o| %>
+  <%= o.input :text, label: "Comentario" %>
+  <%= o.hidden_field :user_id, value: @user.id  %>
+  <%= o.submit %>
+<% end %>
