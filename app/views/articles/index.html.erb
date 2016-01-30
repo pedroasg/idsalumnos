@@ -9,7 +9,7 @@
       <h3><%= article.title %></h3>
       <div class="under-title">
         Redactado por: <%= article.author %>
-        el <%= article.created_at.strftime('%v') %>
+        el <%= article.created_at.strftime('%F') %>
       </div>
       <div class="contenido">
         <div class="image">
@@ -20,6 +20,15 @@
         </div>
       </div>
       <div class="more">
+        <% if current_admin %>
+          <%= link_to [:admin, article], method: :delete,
+                                          data: { confirm: 'Borrar?' } do %>
+            <span class="glyphicon glyphicon-trash"></span>
+            Borrar
+          <% end %>
+            <%= link_to "Editar", edit_admin_article_path(article),
+              class: "glyphicon glyphicon-edit" %>
+        <% end %>
         <%= link_to "Leer más...", article_path(article) %>
       </div>
     </div>
