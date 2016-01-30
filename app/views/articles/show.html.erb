@@ -24,26 +24,12 @@
     <div class="new-comment">
       <%= render 'comments_form' %>
     </div>
+  <% else %>
+    <div class="no-session">
+      <h1>Inicia sesión con <%= link_to "Facebook", "/auth/facebook" %> para comentar!<h1>
+    </div>
   <% end %>
 
-  <div class="all-comments">
-    <% @comments.each do |comment| %>
-      <div class="comment">
-        <div class="user">
-          <%= image_tag comment.user.profile_picture %>
-          <b><%= comment.user.first_name + " " + comment.user.last_name %></b>
-          <br>
-          <%= comment.created_at.strftime("%d %b. %Y - %r") %>
-        </div>
-        <p><%= comment.text %></p>
-        <% if comment.user == current_user || current_admin %>
-          <%= link_to article_comentario_path(@article.id, comment.id), method: :delete,
-            data: { confirm: 'Borrar?' } do %>
-            <span class="glyphicon glyphicon-trash"></span>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'comments_index' %>
 
 </div>
