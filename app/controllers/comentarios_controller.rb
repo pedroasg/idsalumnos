@@ -11,15 +11,6 @@ class ComentariosController < ApplicationController
     end
   end
 
-  def update
-    @comment = Comentario.find(params[:id])
-    if @comment.update(permited_params)
-      redirect_to :back
-    else
-      respond_with @article
-    end
-  end
-
   def destroy
     @comment = Comentario.find(params[:id])
     @comment.destroy
